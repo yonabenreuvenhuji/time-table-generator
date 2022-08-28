@@ -1,4 +1,4 @@
-from shcedule import (
+from functions import (
     create_time_tables,
     get_daily_average_average,
     get_hour_count,
