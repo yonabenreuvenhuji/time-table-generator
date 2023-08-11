@@ -15,6 +15,7 @@ class Group(TypedDict):
 class Course(TypedDict):
     course: int
     type: str
+    points: int
     groups: list[Group]
 
 

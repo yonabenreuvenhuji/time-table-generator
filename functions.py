@@ -7,7 +7,7 @@ def generate_time_table() -> TimeTable:
     return [{i + 8: "_________" for i in range(12)} for _ in range(5)]
 
 
-type_to_letter = {"class": "C", "exercise": "E", "lab": "L"}
+type_to_letter = {"class": "C", "exercise": "E", "lab": "L", "workshop": "W"}
 
 
 def time_table_to_matrix(time_table: TimeTable) -> list[list[str]]:
@@ -97,3 +97,11 @@ def get_daily_average_average(time_table: TimeTable):
         if count != 0:
             average_sum += day_sum / count
     return average_sum / len(time_table)
+
+
+def get_points(schedule: Schedule):
+    points = 0
+    for course in schedule:
+        if "points" in course:
+            points += course["points"]
+    return points
